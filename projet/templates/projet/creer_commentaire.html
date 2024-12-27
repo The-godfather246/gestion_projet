@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Créer un Commentaire</title>
+</head>
+<body>
+    <h1>Créer un Commentaire</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Créer</button>
+    </form>
+    <a href="{% url 'liste_commentaires' %}">Retour à la liste des commentaires</a>
+</body>
+</html>

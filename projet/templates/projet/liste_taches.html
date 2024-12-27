@@ -1,0 +1,29 @@
+{% extends "projet/base.html" %}
+
+{% block title %}Liste des Taches{% endblock %}
+
+{% block content %}
+<h1>Liste des Taches</h1>
+<ul>
+    {% for projet in projets %}
+        <li>{{ projet.nom }} - {{ projet.description }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'creer_tache' %}">Créer une nouvelle tache</a>
+{% endblock %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des Tâches</title>
+</head>
+<body>
+    <h1>Liste des Tâches</h1>
+    <ul>
+        {% for tache in taches %}
+            <li>{{ tache.nom }} - {{ tache.projet.nom }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'creer_tache' %}">Créer une nouvelle tâche</a>
+</body>
+</html>

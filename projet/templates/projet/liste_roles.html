@@ -1,0 +1,29 @@
+{% extends "projet/base.html" %}
+
+{% block title %}Liste des Roles{% endblock %}
+
+{% block content %}
+<h1>Liste des Roles</h1>
+<ul>
+    {% for projet in projets %}
+        <li>{{ projet.nom }} - {{ projet.description }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'creer_role' %}">Créer un nouveau role</a>
+{% endblock %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des Rôles</title>
+</head>
+<body>
+    <h1>Liste des Rôles</h1>
+    <ul>
+        {% for role in roles %}
+            <li>{{ role.role_nom }} - {{ role.projet.nom }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'creer_role' %}">Créer un nouveau rôle</a>
+</body>
+</html>

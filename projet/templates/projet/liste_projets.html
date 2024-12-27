@@ -1,0 +1,28 @@
+{% extends "projet/base.html" %}
+
+{% block title %}Liste des Projets{% endblock %}
+
+{% block content %}
+<h1>Liste des Projets</h1>
+<ul>
+    {% for projet in projets %}
+        <li>{{ projet.nom }} - {{ projet.description }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'creer_projet' %}">Créer un nouveau projet</a>
+{% endblock %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des Projets</title>
+</head>
+<body>
+    <h1>Liste des Projets</h1>
+    <ul>
+        {% for projet in projets %}
+            <li>{{ projet.nom }} - {{ projet.description }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

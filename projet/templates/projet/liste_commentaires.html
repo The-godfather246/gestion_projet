@@ -1,0 +1,29 @@
+{% extends "projet/base.html" %}
+
+{% block title %}Liste des Commentaires{% endblock %}
+
+{% block content %}
+<h1>Liste des Commentaires</h1>
+<ul>
+    {% for projet in projets %}
+        <li>{{ projet.nom }} - {{ projet.description }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'creer_commentaire' %}">Créer un nouveau commentaire</a>
+{% endblock %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des Commentaires</title>
+</head>
+<body>
+    <h1>Liste des Commentaires</h1>
+    <ul>
+        {% for commentaire in commentaires %}
+            <li>{{ commentaire.contenu }} - {{ commentaire.tache.nom }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'creer_commentaire' %}">Créer un nouveau commentaire</a>
+</body>
+</html>

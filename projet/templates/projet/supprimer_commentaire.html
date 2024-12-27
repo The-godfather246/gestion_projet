@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Supprimer un Commentaire</title>
+</head>
+<body>
+    <h1>Supprimer un Commentaire</h1>
+    <p>Êtes-vous sûr de vouloir supprimer le commentaire "{{ commentaire.contenu }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Supprimer</button>
+    </form>
+    <a href="{% url 'liste_commentaires' %}">Retour à la liste des commentaires</a>
+</body>
+</html>

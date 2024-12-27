@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Supprimer un Rôle</title>
+</head>
+<body>
+    <h1>Supprimer un Rôle</h1>
+    <p>Êtes-vous sûr de vouloir supprimer le rôle "{{ role.role_nom }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Supprimer</button>
+    </form>
+    <a href="{% url 'liste_roles' %}">Retour à la liste des rôles</a>
+</body>
+</html>
